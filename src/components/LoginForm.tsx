@@ -4,12 +4,15 @@ import Button from './Button';
 
 const LoginForm = () => {
   return (
-    <div className="flex flex-col gap-2 mt-3">
+    <div className="flex flex-col gap-2">
+      <div className="mb-3">
+        <h1 className="mt-3 text-3xl font-bold text-primary">Login</h1>
+      </div>
       <Input placeholder={'Email Address'} />
       <Input placeholder={'Password'} />
       <Button className="w-full">Login</Button>
-      <div className="w-full flex flex-col align-middle items-center gap-3 text-xs mt-3">
-        <p className="font-bold text-primary cursor-pointer">Forgot Password</p>
+      <div className="mt-3 flex w-full flex-col items-center gap-3 align-middle text-xs">
+        <p className="cursor-pointer font-bold text-primary">Forgot Password</p>
         <p>Or login with other accounts</p>
       </div>
       <Button variant="secondary">Login with Google</Button>
