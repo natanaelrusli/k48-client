@@ -18,7 +18,7 @@ function Login() {
           height={600}
           alt="login logo"
         />
-        <Card className="flex w-5/12 flex-col gap-6 max-xl:w-6/12 max-lg:w-full">
+        <Card className="flex h-fit w-5/12 flex-col max-xl:w-6/12 max-lg:w-full">
           <LoginForm />
         </Card>
       </div>
