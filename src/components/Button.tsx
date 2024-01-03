@@ -17,7 +17,7 @@ const Button = ({
       case 'primary':
         return 'bg-primary hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline';
       case 'secondary':
-        return 'bg-white text-black hover:bg-gray-200 text-white border py-2 px-4 rounded focus:outline-none focus:shadow-outline';
+        return 'bg-white text-black hover:bg-gray-200 text-black border py-2 px-4 rounded focus:outline-none focus:shadow-outline';
       // Add more variants as needed
       default:
         return '';

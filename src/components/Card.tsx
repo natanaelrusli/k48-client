@@ -7,7 +7,7 @@ const Card = ({
   return (
     <div
       {...props}
-      className={props.className + ' border-gray-300 border rounded-md p-6'}
+      className={props.className + ' rounded-md border border-gray-300 p-6'}
     >
       {children}
     </div>
