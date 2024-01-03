@@ -6,7 +6,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between gap-6">
       <Navbar />
-      <main className="w-9/12 flex-grow">{children}</main>
+      <main className="w-9/12 flex-grow max-md:w-11/12">{children}</main>
       <Footer />
     </div>
   );
