@@ -29,7 +29,7 @@ const PartnersGrid = styled.div`
 export default function Home() {
   return (
     <main
-      className={`flex h-fit flex-col items-center justify-between p-2 ${inter.className}`}
+      className={`flex h-fit flex-col items-center justify-between ${inter.className}`}
     >
       <PartnersSection>
         <h1 className="mb-5">Partners</h1>
