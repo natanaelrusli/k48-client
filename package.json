@@ -10,12 +10,15 @@
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write"
   },
   "dependencies": {
+    "@types/jss": "^10.0.0",
+    "@types/react-jss": "^10.0.0",
     "jss": "^10.10.0",
     "jss-preset-default": "^10.10.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-jss": "^10.10.0"
+    "react-jss": "^10.10.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -37,5 +40,8 @@
     "prettier-plugin-tailwindcss": "^0.5.10",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
