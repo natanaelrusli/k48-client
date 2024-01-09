@@ -10,9 +10,12 @@
     "prettier-format": "prettier --config .prettierrc 'src/**/*.{ts,tsx}' --write"
   },
   "dependencies": {
+    "jss": "^10.10.0",
+    "jss-preset-default": "^10.10.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-jss": "^10.10.0"
   },
   "devDependencies": {
     "@types/node": "^20",

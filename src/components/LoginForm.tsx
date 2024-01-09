@@ -15,9 +15,15 @@ const LoginForm = () => {
         <p className="cursor-pointer font-bold text-primary">Forgot Password</p>
         <p>Or login with other accounts</p>
       </div>
-      <Button variant="secondary">Login with Google</Button>
-      <Button variant="secondary">Login with Twitter</Button>
-      <Button variant="secondary">Login with Facebook</Button>
+      <Button variant="secondary">
+        <i className="fa-brands fa-google"></i>Login with Google
+      </Button>
+      <Button variant="secondary">
+        <i className="fa-brands fa-twitter"></i>Login with Twitter
+      </Button>
+      <Button variant="secondary">
+        <i className="fa-brands fa-facebook"></i>Login with Facebook
+      </Button>
     </div>
   );
 };

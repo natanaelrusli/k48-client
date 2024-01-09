@@ -1,9 +1,12 @@
-import React, { HTMLProps, ReactNode } from 'react';
+import React, { HTMLProps, ReactNode, useEffect, useState } from 'react';
+import { styles } from './ButtonStyle';
 
 type ButtonProps = {
   children: ReactNode;
   buttonType?: 'submit' | 'reset' | 'button';
   variant?: string;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
 } & HTMLProps<HTMLButtonElement>;
 
 const Button = ({
@@ -12,27 +15,32 @@ const Button = ({
   buttonType,
   ...props
 }: ButtonProps) => {
-  const getButtonClasses = () => {
-    switch (variant) {
-      case 'primary':
-        return 'bg-primary hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline';
-      case 'secondary':
-        return 'bg-white text-black hover:bg-gray-200 text-black border py-2 px-4 rounded focus:outline-none focus:shadow-outline';
-      // Add more variants as needed
-      default:
-        return '';
-    }
-  };
+  const [buttonClasses, setButtonClasses] = useState<string>('');
+  const classes = styles();
 
-  const buttonClasses = `transition duration-300 ease-in-out ${getButtonClasses()}`;
+  useEffect(() => {
+    const getButtonClasses = () => {
+      switch (variant) {
+        case 'primary':
+          return classes.buttonPrimary;
+        case 'secondary':
+          return classes.buttonSecondary;
+        default:
+          return '';
+      }
+    };
+
+    setButtonClasses(getButtonClasses());
+  }, [variant, classes.buttonPrimary, classes.buttonSecondary]);
+
+  const containerClasses =
+    React.Children.count(children) === 1
+      ? 'flex items-center justify-center'
+      : 'flex w-10/12 items-center justify-between text-center';
 
   return (
-    <button
-      {...props}
-      type={buttonType}
-      className={buttonClasses + ' ' + props.className}
-    >
-      {children}
+    <button {...props} type={buttonType} className={`${buttonClasses}`}>
+      <div className={containerClasses}>{children}</div>
     </button>
   );
 };
