@@ -1,22 +1,32 @@
-import React, { HTMLProps, ReactNode, useEffect, useState } from 'react';
-import { styles } from './ButtonStyle';
+import React, {
+  HTMLProps,
+  PropsWithChildren,
+  ReactNode,
+  useEffect,
+  useState
+} from 'react';
+import useButtonStyles, { ButtonClasses } from './ButtonStyle';
 
-type ButtonProps = {
-  children: ReactNode;
+export type ButtonProps = {
   buttonType?: 'submit' | 'reset' | 'button';
   variant?: string;
   prefix?: ReactNode;
   suffix?: ReactNode;
+  color?: string;
+  bgColor?: 'primary' | 'secondary' | 'transparent';
+  radius?: string;
+  size?: string;
 } & HTMLProps<HTMLButtonElement>;
 
 const Button = ({
   children,
   variant = 'primary',
   buttonType,
+  color,
   ...props
-}: ButtonProps) => {
+}: PropsWithChildren<ButtonProps>) => {
   const [buttonClasses, setButtonClasses] = useState<string>('');
-  const classes = styles();
+  const classes: ButtonClasses = useButtonStyles();
 
   useEffect(() => {
     const getButtonClasses = () => {

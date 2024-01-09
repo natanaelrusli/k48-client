@@ -1,7 +1,11 @@
 import { primaryBlue, secondaryGray } from '@/styles/colors';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, Styles } from 'react-jss';
 
-export const styles = createUseStyles({
+export type ButtonClassNames = 'button' | 'buttonPrimary' | 'buttonSecondary';
+export type ButtonClasses = Record<ButtonClassNames, string>;
+export type ButtonStyles = Styles<ButtonClassNames>;
+
+const getStyles: Styles<ButtonClassNames> = {
   button: {
     padding: '9px 12px',
     borderRadius: 6,
@@ -9,7 +13,8 @@ export const styles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
-    borderWidth: 1
+    borderWidth: 1,
+    width: '100%'
   },
   buttonPrimary: {
     extend: 'button',
@@ -21,4 +26,8 @@ export const styles = createUseStyles({
     backgroundColor: secondaryGray,
     color: '#000'
   }
-});
+};
+
+const useButtonStyles = createUseStyles(getStyles);
+
+export default useButtonStyles;
