@@ -8,23 +8,31 @@ const inter = Inter({ subsets: ['latin'] });
 const PartnersSection = styled.section`
   width: 100vw;
   background-color: ${primaryLightBlue};
-  display: flex;
   justify-content: center;
   padding: 1.5rem 0;
   color: black;
   font-weight: 600;
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const PartnersGrid = styled.div``;
+const PartnersGrid = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  flex-wrap: wrap;
+  gap: 30px;
+`;
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-2 ${inter.className}`}
+      className={`flex h-fit flex-col items-center justify-between p-2 ${inter.className}`}
     >
       <PartnersSection>
-        <h1>Partners</h1>
+        <h1 className="mb-5">Partners</h1>
         <PartnersGrid>
           <Image
             src={
